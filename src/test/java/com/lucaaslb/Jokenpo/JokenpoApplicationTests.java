@@ -1,6 +1,7 @@
 package com.lucaaslb.Jokenpo;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Test;
@@ -16,12 +17,14 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class JokenpoApplicationTests {
 
-	@Autowired
-	private MockMvc mvc;
+	  @Autowired
+	    private MockMvc mvc;
 
-	@Test
-	public void helloApp() throws Exception {
-		mvc.perform(get("/Jokenpô API Online!")).andExpect(status().isOk());
-	}
+	    @Test
+	    public void helloGradle() throws Exception {
+	        mvc.perform(get("/hello"))
+	            .andExpect(status().isOk())
+	            .andExpect(content().string("Jokenpô API Online!"));
+	    }
 
 }
