@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.lucaaslb.Jokenpo.model.Jogadores;
 
 @Service
-public class JogadasService {
+public class JokenpoService {
 
 	private List<Jogadores> listJogadores = new ArrayList<Jogadores>();
 
@@ -24,6 +24,11 @@ public class JogadasService {
 
 	public List<Jogadores> getJogadores() {
 		return listJogadores;
+	}
+
+	public void removeJogador(int numeroJogador) {
+		listJogadores.removeIf(u -> u.getNumero() == numeroJogador);
+
 	}
 
 	public void jogar(List<Jogadores> listJogar) {
